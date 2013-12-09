@@ -13,13 +13,13 @@
 #  audit{ file='/etc/passwd' }
 #
 class audit (
-  $file = false,
-  $audit = 'all')
+  $file  = false,
+  $level = 'all')
 {
   # Check if file is defined and add full auditing
   if $file {
     file { $file:
-      audit => all,
+      audit => $level,
     }
   }
 }
