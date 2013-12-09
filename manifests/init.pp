@@ -16,7 +16,7 @@ class audit (
   $file = false)
 {
   if $file {
-    file { '$file':
+    file { $file:
       audit => all,
     }
   }
